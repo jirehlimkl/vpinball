@@ -85,7 +85,7 @@ public:
    string GetPerfInfo();
 
    void SetPlayState(const bool isPlaying, const uint32_t delayBeforePauseMs = 0); // Allow to play/pause during UI interaction or to perform timed simulation steps (still needs the player window to be focused).
-   bool IsPlaying(const bool applyWndFocus = true) const { return (m_playMode == PlayMode::CaptureAttract) || (m_wantsToPlay && (applyWndFocus ? m_playfieldWnd->IsFocused() : true) && !IsEditorMode()); }
+   bool IsPlaying(const bool applyWndFocus = true) const { return (m_playMode == PlayMode::CaptureAttract) || (m_wantsToPlay && !IsEditorMode()); }
    void OnFocusChanged(); // On focus lost, pause player and show mouse cursor
    bool ShouldHideDesktopCursor() const; // In VR, only hide the shared OS cursor when the desktop display presents a game surface (cabinet / cabinet+ancillary scene render)
 
